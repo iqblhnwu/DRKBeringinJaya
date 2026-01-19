@@ -1,0 +1,17 @@
+body{
+    background-color:#FBCEB1 ;
+    overflow: hidden;
+}
+.kontener{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.kartu{
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+}
+
