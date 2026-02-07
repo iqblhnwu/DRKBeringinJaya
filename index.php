@@ -78,4 +78,7 @@ include "config/konfigurasi.php";
         </div>
     </div>
 </body>
+<footer class="footer">
+
+</footer>
 </html>
