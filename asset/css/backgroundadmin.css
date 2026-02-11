@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Garamond, serif;
+}
+body{
+    background-color: #fff;
+    border-radius: 12px;
+    /* margin-top: 70px; */
+    justify-content: center;
+    align-items: center;
+}
+.navadmin{
+    background-color: #ffc9a3;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.midnavmin button{
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+    background-color: #ffe4d1;
+    border-style: none;
+}
+.midnavmin button:hover{
+    width: 75px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #ffa96c;
+    border-style:solid;
+}
+.midnavmin button:active{
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+    background-color: #c45506;
+    border-style:solid;
+}
+.midnavmin .bmaktif{
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+    background-color: #ffa96c;
+    border-style:solid;
+}
+.navadmin.leftnavmin h4{
+    font-size: 16px;
+}
+.rightnavmin .navtog{
+    width: 50px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+    background-color: #ffe4d1;
+    border-style: none;
+}
+
+/* =========================
+   Mobile (Hp)
+   ========================= */
+@media (max-width: 768px) {
+    .midnavmin .ddnav{
+        position:absolute;
+        width: 180px;
+        top:57px;
+        right: 15px;
+        border-radius:12px;
+    }
+    .leftnavmin{
+        margin-left: 10%;
+    }
+    .rightnavmin{
+        margin-right:5%;
+    }
+    .rightnavmin .navtog{
+        position: absolute;
+        z-index:1000;
+        top:18px;
+        right:18px;
+    }
+    .midnavmin .ddnav button{
+        display: none;
+    }
+    .rightnavmin .ddnav .lg{
+        display:none;
+    }
+    .midnavmin .ddnav.resp{
+        background:#ffc9a3;
+        padding:10px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+    .midnavmin .ddnav.resp button{
+        display: block;
+        width: 140px;
+        height: 40px;
+        margin-top:10px;
+    }
+    .rightnavmin .ddnav.resp .navtog{
+        position:absolute;
+        right:2%;
+        top:2%;
+    }
+}
+/* =========================
+   Tablet
+   ========================= */
+@media (min-width: 769px) and (max-width:1023px) {
+    .leftnavmin{
+        margin-left: 4%;
+    }
+    .rightnavmin {
+        margin-right: 4%;
+    }
+}
+/* =========================
+    Desktop
+   =========================*/
+@media (min-width:1024px){
+    .rightnavmin .navtog{
+        display: none;
+    }
+}

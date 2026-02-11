@@ -10,7 +10,7 @@ include "config/konfigurasi.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="asset/css/bgindex.css">
+    <link rel="stylesheet" href="asset/css/bgimndex.css">
     <script src="asset/js/jquery-3.7.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asrama Beringin Jaya</title>
