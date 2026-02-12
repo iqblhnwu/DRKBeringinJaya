@@ -21,7 +21,7 @@ if($conf == "login"){
             echo "404";
         }
     }else{
-        echo "Username atau Password salah!";
+        echo $query;
     }
 }
 ?>

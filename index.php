@@ -50,6 +50,10 @@ include "config/konfigurasi.php";
                                 window.location.href = "user/user_mainpage.php";
                                 $('#user').val("");
                                 $('#pass').val("");
+                            }else if(val == ""){
+                                window.location.href = "user/user_mainpage.php";
+                                $('#user').val("");
+                                $('#pass').val("");
                             }else{
                                 alert(val);
                                 $('#user').val("");

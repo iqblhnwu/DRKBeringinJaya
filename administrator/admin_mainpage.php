@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/backgroundadmin.css">
+    <link rel="stylesheet" href="../asset/css/bgadmin.css">
     <script src="../asset/js/jquery-3.7.1.min.js"></script>
     <title>Administrator</title>
     <script>
         $(document).ready(function(){
+            $('.contentadmin').load('page_penyewa.php');
+
             $('.snavmin').on('click',function(e){
                 e.preventDefault();
                 const n = $(this).attr('id');
@@ -25,6 +27,7 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.contentadmin').load('page_penyewa.php');
                 }else if(n == "idK"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -39,6 +42,7 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.contentadmin').load('page_kamar.php');
                 }else if(n == "idKn"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -53,6 +57,7 @@
                         $(".c").addClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.contentadmin').load('page_keuangan.php');
                 }else if(n == "idM"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -67,8 +72,11 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").addClass("bmaktif");
                     }
+                    $('.contentadmin').load('page_masukan.php');
+                }else if(n == "lout"){
+                    window.location.href = '../index.php'
                 }else{
-                    alert("404");
+                    alert('404')
                 }
             })
             $('.ntjs').on('click',function(e){
@@ -96,14 +104,18 @@
                 <button class="snavmin b" id="idK">Kamar</button>
                 <button class="snavmin c" id="idKn">Keuangan</button>
                 <button class="snavmin d" id="idM">Masukan</button>
+                <button class="snavmin lg" id="lout">Logout</button>
             </div>
         </div>
         <div class="rightnavmin">
             <div class="ddnav">
-                <h4 class="lg" id="lout">Logout</h4>
+                <h4 class="snavmin lg" id="lout">Logout</h4>
             </div>
             <button class="navtog ntjs" id="na">&#9776;</button>
         </div>
+    </div>
+    <div class="fill">
+        <div class="contentadmin"></div>
     </div>
 </body>
 </html>
