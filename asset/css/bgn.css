@@ -56,6 +56,21 @@ body{
     background-color: #ffa96c;
     border-style:solid;
 }
+.leftnavmin{
+    margin-left: 2%;
+}
+.rightnavmin{
+    margin-right: 3%;
+}
+.rightnavmin .ddnav .lg{
+    cursor:pointer;
+}
+.rightnavmin .ddnav .lg:hover{
+    color: red;
+}
+.rightnavmin .ddnav .lg:active{
+    color: #fff;
+}
 .navadmin.leftnavmin h4{
     font-size: 16px;
 }
@@ -67,19 +82,26 @@ body{
     border-radius: 16px;
     background-color: #ffe4d1;
     border-style: none;
+    
 }
+
 .fill{
     background-color: #fff;
     border-radius: 12px;
+    height: 100vh;
+    
 }
 .cardadmin{
-    border-bottom: 1px solid #aaa;
-    height: 40vh;
+    
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:4px;
 }
 table{
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
+    margin-top: 16px;
 }
 thead{
     background-color: black;
@@ -88,14 +110,144 @@ thead{
 th, td{
     text-align: center;
     border: 1px solid #ddd;
+    padding: 8px;
+    font-weight: 700;
 }
 tbody{
     background-color: #f2f2f2;
 }
+.paginasiadmin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-bottom: 24px;
+}
+/* .paginasiadmi.show{
+    display: flex;
+} */
+.paginasiadmin span{
+    display:inline-block;
+    min-width:38px;      /* lebar tombol */
+    padding:8px 14px;    /* tinggi & lebar dalam */
+    margin:0 5px;
+    border-radius:8px;
+    background:#f2d3b1;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;      /* ukuran teks lebih besar */
+    transition:0.2s;
+}
+
+.paginasiadmin .pagktif{
+    text-decoration:underline;
+}
+.fill .contenerkamar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:15px;
+}
+.kartukamar{
+    background-color: #aaa;
+    border-radius: 8px;
+    width: 80px;
+    height:80px;
+}
+.btn-edit-admin {
+    margin-right: 10px;
+    color: #000;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-hapus-admin {
+    font-size: 20px;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit-admin:hover {
+    color: #693902;
+}
+
+.btn-hapus-admin:hover {
+    color: #410802;
+}
+.btn-edit-admin:active, .btn-hapus-admin:active {
+    color:#bbb;
+}
+
+.edit-mode-P{
+    display: none;
+
+}
+.edit-mode-P.show{
+    display: initial;
+}
+.tabel-mode-P{
+    display: none;
+}
+.tabel-mode-P.show{
+    display: initial;
+}
+.contentadmin{
+    display: initial;
+}
+.contentadmin.hide{
+    display: none;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 40%;
+}
+.loader-tabel-penyewa {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 22%;
+}
+.loading_mode{
+    display: none;
+}
+.loading_mode h4{
+    position:absolute;
+    top:62%
+}
+.loading_mode.show{
+    display: flex;
+    justify-content: center;
+}
+.loading_mode .jcc h4{
+    margin-top: 25px;
+}
+.pembatas{
+    border:1px solid #ddd;
+}
+.pembatas.hide{
+    display: none;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 /* =========================
    Mobile (Hp)
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .midnavmin .ddnav{
         position:absolute;
         width: 180px;
@@ -114,6 +266,9 @@ tbody{
         z-index:1000;
         top:18px;
         right:18px;
+    }
+    .rightnavmin .navtog:active{
+        background:#ffa96c ;
     }
     .midnavmin .ddnav button{
         display: none;
@@ -139,6 +294,7 @@ tbody{
     .cardadmin{
         width: 100%;
         overflow-x: scroll;
+        justify-content: center;
     }
     .rightnavmin .ddnav.resp .navtog{
         position:absolute;
@@ -146,11 +302,36 @@ tbody{
         top:2%;
         
     }
+    .paginasiadmin {
+      width: 100%;
+      justify-content: flex-end;
+      
+    }
+    .btn-edit-admin {
+        margin-bottom: 6px;
+        margin-top: 6px;
+        color: #000;
+        font-size: 20px;
+        border: none;
+        margin-right: 0px;
+        
+    }
+    .btn-hapus-admin {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 20px;
+        color: #000;
+        border: none;
+    }
+    
+
+    
 }
+
 /* =========================
    Tablet
    ========================= */
-@media (min-width: 769px) and (max-width:1023px) {
+@media (min-width: 768px) and (max-width:1023px) {
     .leftnavmin{
         margin-left: 4%;
     }
@@ -167,15 +348,15 @@ tbody{
         cursor: pointer;
         font-size: 18px;
     }
-    .rightnavmin .ddnav .lg:active{
-        color: #fff;
-    }
+    
     .fill{
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-color: #000;
+        
     }
     .cardadmin{
-        overflow-x: auto;
+        overflow-x: auto;       
     }
     .fill h4{
         margin-bottom: 10px;
@@ -184,10 +365,13 @@ tbody{
         min-width: 800px;
         overflow: auto;
     }
-    .cardadmin{
+    th, td{
+        margin: 10px;
+    }
+    /* .cardadmin{
         width: 100%;
         overflow-x: scroll;
-    }
+    } */
     
 }
 /* =========================

@@ -1,15 +1,29 @@
+<?php 
+session_start();
+
+if(!isset($_SESSION['lvl'])){
+    header('location: ../index.php');
+}else{
+    include '../config/konfigurasi.php';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/bgadmin.css">
+    <link rel="stylesheet" href="../asset/css/bgn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="../asset/js/jquery-3.7.1.min.js"></script>
     <title>Administrator</title>
     <script>
         $(document).ready(function(){
-            $('.contentadmin').load('page_penyewa.php');
-
+            $('.loading_mode').addClass('show');
+            setTimeout(() => {
+                $('.loading_mode').removeClass('show')
+                $('.contentadmin').load('page_penyewa.php');
+            }, 500);
             $('.snavmin').on('click',function(e){
                 e.preventDefault();
                 const n = $(this).attr('id');
@@ -27,7 +41,13 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.loading_mode').addClass('show');
+                    $('.contentadmin').addClass('hide');
                     $('.contentadmin').load('page_penyewa.php');
+                    setTimeout(() => {
+                        $('.loading_mode').removeClass('show');
+                         $('.contentadmin').removeClass('hide');
+                    }, 200);
                 }else if(n == "idK"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -42,7 +62,13 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.loading_mode').addClass('show');
+                    $('.contentadmin').addClass('hide');
                     $('.contentadmin').load('page_kamar.php');
+                    setTimeout(() => {
+                        $('.loading_mode').removeClass('show');
+                         $('.contentadmin').removeClass('hide');
+                    }, 200);
                 }else if(n == "idKn"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -57,7 +83,13 @@
                         $(".c").addClass("bmaktif");
                         $(".d").removeClass("bmaktif");
                     }
+                    $('.loading_mode').addClass('show');
+                    $('.contentadmin').addClass('hide');
                     $('.contentadmin').load('page_keuangan.php');
+                    setTimeout(() => {
+                        $('.loading_mode').removeClass('show');
+                         $('.contentadmin').removeClass('hide');
+                    }, 200);
                 }else if(n == "idM"){
                     if($('.ntjs').attr('id') === "ak"){
                         $(".a").removeClass("bmaktif");
@@ -72,7 +104,13 @@
                         $(".c").removeClass("bmaktif");
                         $(".d").addClass("bmaktif");
                     }
+                    $('.loading_mode').addClass('show');
+                    $('.contentadmin').addClass('hide');
                     $('.contentadmin').load('page_masukan.php');
+                    setTimeout(() => {
+                        $('.loading_mode').removeClass('show');
+                         $('.contentadmin').removeClass('hide');
+                    }, 200);
                 }else if(n == "lout"){
                     window.location.href = '../index.php'
                 }else{
@@ -96,7 +134,7 @@
 <body>
     <div class="navadmin">
         <div class="leftnavmin">
-            <h4>Admin</h4>
+            <h4><?= $_SESSION['lvl']?></h4>
         </div>
         <div class="midnavmin">
             <div class="ddnav">
@@ -115,6 +153,10 @@
         </div>
     </div>
     <div class="fill">
+        <div class="loading_mode">
+            <div class="loader"></div>
+            <h4>Loading...</h4>
+        </div>
         <div class="contentadmin"></div>
     </div>
 </body>

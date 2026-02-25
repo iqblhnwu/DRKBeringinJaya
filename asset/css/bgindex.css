@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Garamond, serif;
+  
 }
 body {
   min-height: 100vh;
@@ -22,9 +23,9 @@ body {
   margin-bottom:5%;
 }
 .judul {
-  margin-top: 20px;
+  
   font-size: 26px;
-  color: #bf7646;
+  color: #333;
   font-weight: 500;
 }
 
@@ -32,7 +33,7 @@ body {
   background: #ffffff;
   width: 350px;
   padding: 25px;
-  height: 300px;
+  height: 320px;
   border-radius: 12px;
   margin: 50px auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -48,19 +49,21 @@ body {
 .card input {
   width: 100%;
   padding: 10px 12px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   border: none;
   border-radius: 8px;
   background: #e0e0e0;
   outline: none;
   color: #333;
   font-size: 15px;
+  font-weight: 700;
 }
 .card button {
   background: #f4a261;
   color: #fff;
   border: none;
   height: 35px;
+  margin-top: 20px;
   padding: 8px 18px;
   border-radius: 10px;
   cursor: pointer;
@@ -96,18 +99,37 @@ body {
   bottom: 0;
   left: 0;
 }
-
+.cb-r{
+  position: absolute;
+  padding-left: 4px;
+  gap: 10px;
+  margin-top: 10px;
+}
+.cb-r input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.cb-r label{
+  position: absolute;
+  width: 120px;
+  cursor: pointer;
+}
+.f1 {top: -30px; left: 22%;}
+.f2 {top: -30px; right: 22%;}
+.f3 {top: 35px; left: 28%;}
+.f4 {top: 35px; right: 28%;}
 /* =========================
    Mobile (Hp)
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .kontener{
+    height: 55vh;
+  }
   .judul {
     font-size: 26px;
-    margin-top: 8px;
-  }
-  .card {
-    width: 85%;
-    padding: 20px;
+    
   }
   .card button {
     align-items: right;
@@ -122,21 +144,17 @@ body {
   .f4 {top: -10px; right: 2%;}
 
 }
-
 /* =========================
-   Desktop (Komputer/laptop)
+   Tablet
    ========================= */
-@media (min-width: 769px) {
-  .judul {
-    font-size: 38px;
-  }
-
-  .card {
-    width: 360px;
-    height: 320px;
+@media (min-width: 768px) and (max-width:1023px) {
+  .kontener{
+    height: 55vh;
   }
   .f1 {top: -30px; left: 22%;}
   .f2 {top: -30px; right: 22%;}
   .f3 {top: 35px; left: 28%;}
   .f4 {top: 35px; right: 28%;}
 }
+
+
